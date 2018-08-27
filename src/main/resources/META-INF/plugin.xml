@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>vu.thesis.mike.broadcastreceiverplugin</id>
+    <name>br_plugin</name>
+    <version>0.0.1</version>
+    <vendor email="dummy" url="dummy">Mike Trieu</vendor>
+
+    <description>
+        BroadcastReceiver Experiment Plugin. The purpose of this plugin is to measure performance of Manifest-declared Broadcast Receivers.
+    </description>
+
+    <change-notes>
+        Release 0.0.1: Initial release.
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <actions>
+        <group id="BRPlugin.Menu" text="BroadcastReceiver Experiment" description="BroadcastReceiver Experiment Menu" popup="true">
+            <action id="Configure" class="vu.thesis.mike.broadcastreceiverplugin.ConfigureAction" text="Configure Experiment" description="Configure Experiment"/>
+            <!--<action id="Instrument" class="vu.thesis.mike.broadcastreceiverplugin.InstrumentAction" text="Instrument Experiment" description="Instrument Experiment"/>-->
+            <action id="Launch" class="vu.thesis.mike.broadcastreceiverplugin.LaunchAction" text="Launch Experiment" description="Launch Experiment"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </group>
+        <action id="BRPlugin.Editor" class="vu.thesis.mike.broadcastreceiverplugin.InstrumentAction" text="BR Experiment: Instrument"  description="Instrument Experiment">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
