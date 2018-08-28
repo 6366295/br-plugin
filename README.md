@@ -31,7 +31,7 @@ Note: Build APK before you launch the experiment.
 ![Broadcast Receiver Plugin Context Menu](images/contextmenu.png)
 
 The current manually work flow of the plugin is shown in the image below:
-![Broadcast Receiver Plugin Menu](images/WorkflowDiagram.png)
+![Broadcast Receiver Plugin Menu](images/workflow.png)
 
 ## Configuration File
 Configure Experiment creates a JSON file.
