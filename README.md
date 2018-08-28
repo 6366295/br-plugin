@@ -8,7 +8,7 @@ To build the tool, you'll need:
 - IntelliJ IDEA
 - JDK 8
 
-To install the tool, you'll need:
+To use the tool, you'll need:
 - Android Studio
 
 To run the tool, you'll need:
