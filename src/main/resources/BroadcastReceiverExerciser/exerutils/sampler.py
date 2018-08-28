@@ -62,7 +62,7 @@ class SamplerProcess():
         self.__read_queue.put('pause')
 
     def continue_process(self):
-        self.__logger.info('Continuing %s process' % self.__name)
+        # self.__logger.info('Continuing %s process' % self.__name)
 
         self.__read_queue.put('cont')
 
@@ -90,5 +90,7 @@ class SamplerProcess():
 
                 if ((read_queue.get() == "cont")):
                     sleep(self.__delay)
+
+                    self.__logger.info('Continuing %s process' % self.__name)
 
                     continue

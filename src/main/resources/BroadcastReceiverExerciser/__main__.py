@@ -157,19 +157,21 @@ def main():
 
             execution_time = re.findall("end, (.*) ms", logs)
 
-            if (len(execution_time) > prev_execution_time):
+            if (len(execution_time) > 0):
                 time.end_time('adb.sendBroadcast')
 
                 cpu_sampler.pause_process()
                 mem_sampler.pause_process()
 
-                prev_execution_time = len(execution_time)
+                # prev_execution_time = len(execution_time)
 
                 output.write_file(
                     execution_time[-1], 
                     process_cpu_samples(cpu_sampler.read_queue()), 
                     process_mem_samples(mem_sampler.read_queue())
                 )
+
+                adb.clear_logcat()
 
                 break
 
@@ -179,6 +181,7 @@ def main():
         mem_sampler.continue_process()
 
         """ Delay between each repetition """
+        logger.info('Sleeping for %s seconds', config.get_delay())
         time.sleep(config.get_delay())
 
     cpu_sampler.stop_process()
